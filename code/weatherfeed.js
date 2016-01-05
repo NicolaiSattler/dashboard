@@ -31,3 +31,24 @@ function populateSelect(){
         selectCity.appendChild(cityOption);
     }      
 }
+
+
+function retrieveDataFromRSS(url) {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            var responseHeader = xmlhttp.getAllResponseHeaders();
+        }
+    };
+
+    xmlhttp.onabort = function (e) {
+        console.log("request was aborted... " + url);
+    }
+
+    xmlhttp.onerror = function (e) {
+        console.log(e.error);
+    }
+
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+}
