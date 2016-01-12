@@ -1,10 +1,19 @@
+//check if namespace is already defined in this or another file.
+//If yes use other file, otherwise create a new namespace.
+var Dashboard = Dashboard || {};
+
+//Create a sub-namespace.
+Dashboard.WeatherFeed = {};
+
+
 window.onload = function()
 {
     populateSelect();
+    retrieveDataFromRSS()
 }
 
-
-var cities = new Array
+var RSSWeatherURL = "http://www.rssweather.com/wx/nl/leeuwarden/rss.php";
+var Cities = new Array
     ("Amsterdam", 
     "De Bilt", 
     "De Kooy", 
@@ -34,6 +43,10 @@ function populateSelect(){
 
 
 function retrieveDataFromRSS(url) {
+    
+    var httpCORS = createCORSRequest("GET", url);
+    
+    
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
