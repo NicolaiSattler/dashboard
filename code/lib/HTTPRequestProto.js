@@ -7,25 +7,45 @@ JSLibrary.HTTP =
     HTTPRequest : function ()
     {
         //property
-        this.xhr = new XMLHttpRequest();
         
         //methods: create a Cross-Origin Resource Sharing Request.        
         function CreateCORSRequest (method, url)
         {
+            var xhr = new XMLHttpRequest();
+            
             if("withCredentials" in this.xhr)
             {
-                this.xhr.open(method, url, true);
+                xhr.open(method, url, true);
             }
             else if (typeof XDomainRequest != "undefined")
             {
                 //Excists only in IE: 
-                this.xhr = new XDomainRequest();
+                xhr = new XDomainRequest();
             }
             else 
             {
                 //CORS is not supported
-                this.xhr = null;
+                xhr = null;
             }
+            
+            
+            xhr.onabort = function(e)
+            {
+                console.log("Request aborted:" + url);
+                console.log(e.returnValue);
+            }         
+            
+            xhr.ontimeout = function(e)
+            {
+                console.log("Request timeout:" + url);
+                console.log(e.returnValue);
+            }
+            
+            xhr.onerror = function(e)
+            {
+                console.log("An error has occured:" + url);             
+                console.log(e.returnValue);
+            }         
         };
     }
 };

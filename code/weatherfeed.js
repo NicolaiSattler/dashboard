@@ -12,6 +12,7 @@ window.onload = function()
     retrieveDataFromRSS()
 }
 
+var HTTPLib = JSLibrary.HTTP.HTTPRequest;
 var RSSWeatherURL = "http://www.rssweather.com/wx/nl/leeuwarden/rss.php";
 var Cities = new Array
     ("Amsterdam", 
@@ -34,9 +35,9 @@ var Cities = new Array
 
 function populateSelect(){
     var selectCity = document.getElementById("city");
-    for(var i = 0; i < cities.length; i++){
+    for(var i = 0; i < Cities.length; i++){
         var cityOption = document.createElement('option');
-        cityOption.value, cityOption.label, cityOption.text = cities[i];
+        cityOption.value, cityOption.label, cityOption.text = Cities[i];
         selectCity.appendChild(cityOption);
     }      
 }
@@ -44,24 +45,13 @@ function populateSelect(){
 
 function retrieveDataFromRSS(url) {
     
-    var httpCORS = createCORSRequest("GET", url);
-    
-    
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function () {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            var responseHeader = xmlhttp.getAllResponseHeaders();
+    var httpCORS = HTTPLib.createCORSRequest("GET", url);  
+    httpCORS.onreadystatechange = function () {
+        if (httpCORS.readyState == 4 && httpCORS.status == 200) {
+            var responseHeader = httpCORS.getAllResponseHeaders();
         }
     };
 
-    xmlhttp.onabort = function (e) {
-        console.log("request was aborted... " + url);
-    }
-
-    xmlhttp.onerror = function (e) {
-        console.log(e.error);
-    }
-
-    xmlhttp.open("GET", url, true);
-    xmlhttp.send();
+    httpCORS.open("GET", url, true);
+    httpCORS.send();
 }
