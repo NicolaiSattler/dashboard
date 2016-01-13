@@ -49,6 +49,7 @@ function retrieveDataFromRSS(url) {
     httpCORS.onreadystatechange = function () {
         if (httpCORS.readyState == 4 && httpCORS.status == 200) {
             var responseHeader = httpCORS.getAllResponseHeaders();
+            ///
         }
     };
 
