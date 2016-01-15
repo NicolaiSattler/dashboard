@@ -1,9 +1,6 @@
 //namespace
-var JSLibrary = JSLibrary || {};
-//sub-namespace
-JSLibrary.HTTP = 
-{   
-    //class
+var JSLibrary = JSLibrary || {    
+    //class   
     HTTPRequest : function ()
     {
         //property
@@ -48,6 +45,8 @@ JSLibrary.HTTP =
             }         
         };
     }
+    
 };
+
 
 

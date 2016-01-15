@@ -1,3 +1,5 @@
+///lib/HTTPRequestProto.js
+
 //check if namespace is already defined in this or another file.
 //If yes use other file, otherwise create a new namespace.
 var Dashboard = Dashboard || {};
@@ -12,7 +14,7 @@ window.onload = function()
     retrieveDataFromRSS()
 }
 
-var HTTPLib = JSLibrary.HTTP.HTTPRequest;
+var lib = JSLibrary;
 var RSSWeatherURL = "http://www.rssweather.com/wx/nl/leeuwarden/rss.php";
 var Cities = new Array
     ("Amsterdam", 
@@ -45,14 +47,15 @@ function populateSelect(){
 
 function retrieveDataFromRSS(url) {
     
-    var httpCORS = HTTPLib.createCORSRequest("GET", url);  
-    httpCORS.onreadystatechange = function () {
-        if (httpCORS.readyState == 4 && httpCORS.status == 200) {
-            var responseHeader = httpCORS.getAllResponseHeaders();
+    var http = new lib.HTTPRequest();
+    var corsRequest = http.createCORSRequest("GET", url);  
+    corsRequest.onreadystatechange = function () {
+        if (corsRequest.readyState == 4 && corsRequest.status == 200) {
+            var responseHeader = corsRequest.getAllResponseHeaders();
             ///
         }
     };
 
-    httpCORS.open("GET", url, true);
-    httpCORS.send();
+    corsRequest.open("GET", url, true);
+    corsRequest.send();
 }
