@@ -1,13 +1,3 @@
-///lib/HTTPRequestProto.js
-
-//check if namespace is already defined in this or another file.
-//If yes use other file, otherwise create a new namespace.
-var Dashboard = Dashboard || {};
-
-//Create a sub-namespace.
-Dashboard.WeatherFeed = {};
-
-
 window.onload = function()
 {
     populateSelect();
@@ -52,7 +42,6 @@ function retrieveDataFromRSS(url) {
     corsRequest.onreadystatechange = function () {
         if (corsRequest.readyState == 4 && corsRequest.status == 200) {
             var responseHeader = corsRequest.getAllResponseHeaders();
-            ///
         }
     };
 
