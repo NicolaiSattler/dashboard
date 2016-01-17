@@ -5,15 +5,31 @@
 <meta name="author" content="Nicolai Sattler">
 <html>
     <head>
-        <script src="http://code.jquery.com/jquery-latest.js"></script>
-        <script src="code/lib/HTTPRequestProto.js" type="text/javascript"></script>
-        <script src="code/Weatherfeed.js" type="text/javascript"></script>
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="styles/stylesheet.css" type="text/css" />  
         
-        <link rel="stylesheet" href="styles/stylesheet.css" type="text/css" />     
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <!--<script src="code/lib/HTTPRequestProto.js" type="text/javascript"></script>
+        <script src="code/weatherfeed.js" type="text/javascript"></script>-->
+        <script src="code/grid.js" type="text/javascript"></script>   
+        <script src="code/appinit.js" type="text/javascript"></script>
     </head>
     <body> 
         <div id="container">
-        <select id="city"></select> 
+            <div class="grid">
+                <div id="cell1" class="cell">
+                    <select id="city"></select>
+                </div>
+                <div id="cell2" draggable="true" class="cell"></div>
+                <div id="cell3" draggable="true" class="cell"></div>
+                <div id="cell4" draggable="true" class="cell"></div>
+                <div id="cell5" draggable="true" class="cell"></div>
+                <div id="cell6" draggable="true" class="cell"></div>
+                <div id="cell7" draggable="true" class="cell"></div>
+                <div id="cell8" draggable="true" class="cell"></div>
+                <div id="cell9" draggable="true" class="cell"></div>
+            </div>
         </div>
+
     </body>
 </html>
