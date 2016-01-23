@@ -10,6 +10,8 @@ function SetGridToDraggable() {
     for (var i = 0; i < cells.length; i++) {
         var obj = cells[i];
         obj.addEventListener("mousedown", GetCellAttributes);
+        obj.addEventListener("mousemove", SetCellPositionAttributes);
+        obj.addEventListener("mouseup", SetNewCellPosition)
     }
 }
 
@@ -21,7 +23,7 @@ function GetCellAttributes(e) {
     _event = true;
 }
 
-document.onmousemove = function (e) {
+function SetCellPositionAttributes(e){
     if (!_event) return;
 
     var x = e.pageX;
@@ -31,11 +33,24 @@ document.onmousemove = function (e) {
     cell.style.position = "absolute";
     cell.style.left = x + "px";
     cell.style.top = y + "px";
-    cell.style.zIndex = cell.style.zIndex + 1;
 }
 
-document.onmouseup = function (e) {
+
+function SetNewCellPosition (e) {
+    var x = e.pageX;
+    var y = e.pageY;
+    var affectingCell = document.elementFromPoint(x,y);
+    
+    if(hasClass(affectingCell, "cell")){
+        console.log("object has class!");
+    }
+    
     _event = false;
+}
+
+//add to library..
+function hasClass(element, className){
+    return (' ' + element.className + ' ').indexOf(' ' + className + ' ') > -1;
 }
 
 
