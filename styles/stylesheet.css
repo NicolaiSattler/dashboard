@@ -61,7 +61,9 @@ footer
 {
     width: 300px;
     height: 300px;
+    color : white;
 }
+
 .cell:nth-child(even)
 {
     background-color:gray;
