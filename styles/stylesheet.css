@@ -1,18 +1,58 @@
-#container
+header
+{
+    margin:auto;
+    width: 978px;
+    height:120px;
+    position:relative;
+    background-color:yellowgreen;
+}
+
+nav 
+{
+    margin:auto;
+    padding:0px;
+    width:auto;
+    height: 80px;
+    position:relative;
+    background-color: yellow;
+}
+
+main
 {
     margin:auto;
     width: 978px;
     height: auto;
     background-color: red;
-    border: solid;
 }
 
-.grid
+section
 {
     margin:auto;
-    display:flex;
-    flex-direction:row;
-    flex-wrap:wrap;
+    background-color: pink;
+}
+
+article
+{
+
+}
+
+footer
+{
+    margin:auto;
+    height: 80px;
+    width:auto;
+    background-color: red;
+}
+
+.grid {
+    margin: auto;
+    display: flex;
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
     width: 900px;
     height: 900px;
 }
