@@ -2,17 +2,19 @@
 var _selectedCellId;
 var _affectedCellId;
 var _event = false;
-var _grid = document.getElementsByClassName("grid");
-var _cells = document.getElementsByClassName("cell");
 
 function SetGridToDraggable() {
-    for (var i = 0; i < _cells.length; i++) {
-        var obj = _cells[i];
+    var cells = document.getElementsByClassName("cell");
+    for (var i = 0; i < cells.length; i++) {
+        var obj = cells[i];
         obj.addEventListener("mousedown", GetCellAttributes);
-        obj.addEventListener("mousemove", SetCellPositionAttributes);
+        obj.addEventListener("mousedown", CreatePlaceHolder);
         obj.addEventListener("mouseover", ValidateElement);
-        obj.addEventListener("mouseup", FinalizeCellRepositioning);
     }
+      
+    document.addEventListener("mouseup", RemovePlaceHolder);
+    document.addEventListener("mouseup", FinalizeCellRepositioning);
+    document.addEventListener("mousemove", SetPlaceholderPosition);
 }
 
 function GetCellAttributes(e) {
@@ -21,42 +23,61 @@ function GetCellAttributes(e) {
     _event = true;
 }
 
-function SetCellPositionAttributes(e){
+function ValidateElement(e) {
+    if (!_event) return;
+    _affectedCellId = $(this).attr('id');
+}
+
+function FinalizeCellRepositioning(e) {
+    var affectedCell = document.getElementById(_affectedCellId);
+    var selectedCell = document.getElementById(_selectedCellId);
+    
+    if(affectedCell == undefined || selectedCell == undefined) return;
+    
+    selectedCell.style.position = "";
+    selectedCell.style.left = "";
+    selectedCell.style.left = "";
+    affectedCell.parentNode.insertBefore(selectedCell, affectedCell);
+    _event = false;
+}
+
+function CreatePlaceHolder(){
+    var tag = document.createElement('p');
+    tag.innerHTML = _selectedCellId;
+    
+    var placeholder = document.createElement('div');
+    placeholder.id = "placeholder";
+    placeholder.className = "cell";
+    placeholder.style.border = "5px solid red";
+    placeholder.appendChild(tag);
+    
+    document.getElementById("grid").appendChild(placeholder);
+}
+
+function RemovePlaceHolder(){
+    var placeholder = document.getElementById("placeholder");  
+    if(placeholder != undefined){
+        document.getElementById("grid").removeChild(placeholder);
+    }
+}
+
+function SetPlaceholderPosition(e) {
     if (!_event) return;
 
     var x = e.pageX;
     var y = e.pageY;
-    var cell = document.getElementById(_selectedCellId);
-
-    cell.style.position = "absolute";
-    cell.style.left = x + "px";
-    cell.style.top = y + "px";
-}
-
-function ValidateElement(e){
-    if(!_event) return;
-    _affectedCellId = $(this).attr('id');
-}
-
-function FinalizeCellRepositioning (e) {
-    //var affCell = $("#" + _affectedCellId).before(_selectedCellId);
-    var affCell = $("#" + _affectedCellId).before(_selectedCellId);
-    var selectedCell = document.getElementById(_selectedCellId);
-    var affectedCell = document.getElementById(_affectedCellId);    
-    var relativePosition = affectedCell.getBoundingClientRect();
+    var cell = document.getElementById("placeholder");
     
-    var affX = relativePosition.left;
-    var affY = relativePosition.top;
-    
-    selectedCell.style.left = affX;
-    selectedCell.style.top = affY;
-    selectedCell.style.position = "";
-    
-    _event = false;
+    if(cell != undefined){
+        cell.style.position = "absolute";
+        cell.style.opacity = "0.5";
+        cell.style.left = x + "px";
+        cell.style.top = y + "px";
+    }
 }
 
 //add to library..
-function hasClass(element, className){
+function hasClass(element, className) {
     return (' ' + element.className + ' ').indexOf(' ' + className + ' ') > -1;
 }
 
