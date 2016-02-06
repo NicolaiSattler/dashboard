@@ -11,7 +11,8 @@
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <!--<script src="code/lib/HTTPRequestProto.js" type="text/javascript"></script>
         <script src="code/weatherfeed.js" type="text/javascript"></script>-->
-        <script src="code/grid.js" type="text/javascript"></script>   
+        <script src="code/grid.js" type="text/javascript"></script> 
+        <script src="code/clock.js" type="text/javascript"></script>           
         <script src="code/appinit.js" type="text/javascript"></script>
     </head>
     <body>
@@ -30,10 +31,12 @@
                 <p id="affectedCellText">...</p>
                 <article>
                     <div  id="grid">
-                        <div id="cell1" class="cell inactiveCell">
+                        <div id="weatherCell" class="cell inactiveCell">
                             <select id="city"></select>
                         </div>
-                        <div id="cell2" class="cell inactiveCell">cell 2</div>
+                        <div id="timeCell " class="cell inactiveCell">
+                            <p id="timestampDig">Time is undefined</p>
+                        </div>
                         <div id="cell3" class="cell inactiveCell">cell 3</div>
                         <div id="cell4" class="cell inactiveCell">cell 4</div>
                         <div id="cell5" class="cell inactiveCell">cell 5</div>
