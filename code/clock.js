@@ -10,7 +10,7 @@ function updateTime(){
    
     
     var digClock = document.getElementById("timestampDig");
-    digClock.innerHTML = currentHour + ":" + currentMinutes + "." + currentSeconds;
+    digClock.innerHTML = hours + ":" + minutes + "." + seconds;
 }
 
 //mijn japanse naam is:
