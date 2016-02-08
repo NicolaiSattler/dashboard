@@ -8,12 +8,6 @@
         <title>Dashboard</title>
         <link rel="stylesheet" href="styles/stylesheet.css" type="text/css" />  
         
-        <script src="http://code.jquery.com/jquery-latest.js"></script>
-        <!--<script src="code/lib/HTTPRequestProto.js" type="text/javascript"></script>
-        <script src="code/weatherfeed.js" type="text/javascript"></script>-->
-        <script src="code/grid.js" type="text/javascript"></script> 
-        <script src="code/clock.js" type="text/javascript"></script>           
-        <script src="code/appinit.js" type="text/javascript"></script>
     </head>
     <body>
         <header>
@@ -36,6 +30,9 @@
                         </div>
                         <div id="timeCell " class="cell inactiveCell">
                             <p id="timestampDig">Time is undefined</p>
+                            <canvas id="canvasClock" width="200", height="200">
+                                <p>Your browser does not support Canvas</p>
+                            </canvas>
                         </div>
                         <div id="cell3" class="cell inactiveCell">cell 3</div>
                         <div id="cell4" class="cell inactiveCell">cell 4</div>
@@ -56,6 +53,12 @@
             <!--Should contain content related to the surrounding content-->
 
         </aside>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <!--<script src="code/lib/HTTPRequestProto.js" type="text/javascript"></script>
+        <script src="code/weatherfeed.js" type="text/javascript"></script>-->
+        <script src="code/grid.js" type="text/javascript"></script> 
+        <script src="code/clock.js" type="text/javascript"></script>           
+        <script src="code/appinit.js" type="text/javascript"></script>
 
         <footer>
             <!-- information about author, copyright etc-->
