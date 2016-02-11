@@ -1,4 +1,6 @@
 // Place your settings in this file to overwrite default and user settings.
 {
-    "git.path": "C:\\Users\\Nicolai Sattler\\AppData\\Local\\GitHub\\PortableGit_c7e0cbde92ba565cb218a521411d0e854079a28c\\cmd\\git.exe"
+    "git.path": "C:\\Users\\Nicolai Sattler\\AppData\\Local\\GitHub\\PortableGit_c7e0cbde92ba565cb218a521411d0e854079a28c\\cmd\\git.exe", 
+    "php.validate.enable": true,
+    "php.validate.executablePath": "C:\\xampp\\php\\php.exe"
 }
