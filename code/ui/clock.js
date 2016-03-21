@@ -1,22 +1,21 @@
 var canvas = document.getElementById('canvasClock');
 var context = canvas.getContext("2d");
 var bgLoaded = false;
-
 var clockImage = new Image();
-clockImage.onload = function(){
-    bgLoaded = true;
-}
 clockImage.src = 'img/clock.jpg';
+// clockImage.onload = function(){
+//     bgLoaded = true;
+// }
 
-function ClockApp(){   
-    if(!bgLoaded){
-        setTimeout('clockApp', 100);
-        return;
-    }
-   
+(function () {
+    // if(!bgLoaded){
+    //     setTimeout('clockApp', 100);
+    //     return;
+    // }
     createClock();
     setInterval('createClock()', 1000);
-}
+    window.setInterval(updateTime, 1000);
+})();
 
 function createClock(){
     var time = new Date();
@@ -34,10 +33,8 @@ function addBackgroundImage(){
 }
 
 function drawHourPointer(t){
-    
-    
     var degrees = (t.getMinutes() / 60 * 30) + (360 / 12 * t.getHours());
-    var radiants = degreesToRadians(degrees);
+    var radiants = Calculator.Radians(degrees);
     context.save();
     context.fillStyle = 'black';
     context.translate(canvas.width / 2, canvas.height / 2);    
@@ -48,7 +45,7 @@ function drawHourPointer(t){
 
 function drawMinutePointer(t){  
     var degrees = (t.getSeconds() * 6 / 60) + (t.getMinutes() * 6);
-    var radiants = degreesToRadians(degrees);
+    var radiants = Calculator.Radians(degrees);
     context.save();
     context.fillStyle = 'black';
     context.translate(canvas.width / 2, canvas.height / 2);    
@@ -59,7 +56,7 @@ function drawMinutePointer(t){
 
 function drawSecondPointer(t){
     var degrees = t.getSeconds() * 6;
-    var radiants = degreesToRadians(degrees);
+    var radiants = Calculator.Radians(degrees);
     context.save()   
     context.fillStyle = 'red';   
     context.translate(canvas.width / 2, canvas.height / 2);
@@ -78,27 +75,17 @@ function clockPointer(size){
     context.fill();
 }
 
-function degreesToRadians(degrees){
-    return (Math.PI / 180) * degrees;
-}
-
 function updateTime(){
     var currentTime = new Date();
     var currentHour  = currentTime.getHours();
     var currentMinutes = currentTime.getMinutes();
-    var currentSeconds = currentTime.getSeconds();
-    
+    var currentSeconds = currentTime.getSeconds();  
     var hours = ( currentHour < 10 ? "0" : "" ) + currentHour.toString();
     var minutes = ( currentMinutes < 10 ? "0" : "") + currentMinutes.toString();
-    var seconds = ( currentSeconds < 10 ? "0" : "") + currentSeconds.toString(); 
-   
-    
+    var seconds = ( currentSeconds < 10 ? "0" : "") + currentSeconds.toString();    
     var digClock = document.getElementById("timestampDig");
     digClock.innerHTML = hours + ":" + minutes + "." + seconds;
 }
-
-
-
 
 //mijn japanse naam is:
 //To-Ki-Mi-Mo-Ta-Ki

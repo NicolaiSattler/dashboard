@@ -2,7 +2,8 @@
 var _affectedCellId;
 var _event = false;
 
-function SetGridToDraggable() {
+//Initiate straight away
+(function () {
     var cells = document.getElementsByClassName("cell");
     for (var i = 0; i < cells.length; i++) {
         var obj = cells[i];
@@ -14,7 +15,7 @@ function SetGridToDraggable() {
     document.addEventListener("mouseup", RemovePlaceHolder);
     document.addEventListener("mouseup", FinalizeCellRepositioning);
     document.addEventListener("mousemove", SetPlaceholderPosition);
-}
+})();
 
 function GetCellAttributes(e) {
     _selectedCellId = $(this).attr('id');

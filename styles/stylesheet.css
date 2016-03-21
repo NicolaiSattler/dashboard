@@ -1,20 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
 header
 {
-    margin:auto;
+    margin:auto;  
     width: 978px;
     height:120px;
-    position:relative;
-    background-color:yellowgreen;
+    position: relative;
+    background-color: rgb(50, 50, 50);
 }
 
 nav 
 {
     margin:auto;
-    padding:0px;
     width:auto;
     height: 80px;
-    position:relative;
-    background-color: yellow;
+    position: relative;
+    background-color: rgb(75, 75, 75);
 }
 
 main
@@ -38,6 +43,27 @@ footer
     width:auto;
     background-color: red;
 }
+
+input
+{
+    border: solid 1px #888;
+}
+
+input:valid
+{
+    border-color: green;
+}
+
+input:required
+{
+    border-color: red;    
+}
+
+input:invalid
+{
+    border-color: red;    
+}
+
 
 #grid {
     margin: auto;
@@ -92,6 +118,10 @@ footer
 {
     background-color: orangered;
     border: solid red 1px;
+}
+
+#Country{
+    text-transform: uppercase;
 }
 
 /*#canvasClock
