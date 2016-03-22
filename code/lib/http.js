@@ -4,52 +4,62 @@ var httpRequest = {
         $.ajax({
             url: url,
             type: 'GET',
-            dataType: 'xml',
-            cache : false,
-            async : true,
+            dataType: 'application/xml',
+            cache : true,
+            crossDomain : true,
             onreadystatechange: function(e){
                 console.log(e.status);
             },
             success: function(result){
+                console.log(result);
                 console.log("success!");
                 return result;
             },
+            error: function (e){
+              console.log(e);  
+            },
             fail: function(){
                 console.error("Could not get data from '" + url +"'");
-                return null;
             }
         });
     }),
+    GetRSSFeedTest: (function(url){
+        $.get(url, function(data) {
+        var $xml = $(data);
+        // $xml.find("item").each(function() {
+        //     var $this = $(this),
+        //         item = {
+        //             title: $this.find("title").text(),
+        //             link: $this.find("link").text(),
+        //             description: $this.find("description").text(),
+        //             pubDate: $this.find("pubDate").text(),
+        //             author: $this.find("author").text()
+        //     }
+        
+        return $xml;
+        //     //Do something with item here...
+        });
+    }),
     GetRSSFeed: function (url) {
-        // if (window.ActiveXObject) {
-        //     xhr = new ActiveXObject("Microsoft.XMLHTTP");
-        // }
-        // else 
-        if (window.XMLHttpRequest) {
-            xhr = new XMLHttpRequest();
-        }
-        else {
-            alert("Your browser does not support AJAX.");
-        }
-
-        xhr.open("GET", url);
-        //xhr.setRequestHeader("Cache-Control", "no-cache"); //request for fresh (non-cached_ data.
-        //xhr.setRequestHeader("Pragma", "no-cache");
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState == 4) { // && xhr.status == 200) {
-                if (xhr.responseText != null) {
-                    return xhr.responseText;
-                }
-                else {
-                    console.log("Could not load RSS:" + url);
-                    return false;
-                }
+        $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'application/xml',
+            cache : true,
+            crossDomain : true,
+            onreadystatechange: function(e){
+                console.log(e.status);
+            },
+            success: function(result){
+                return result;
+            },
+            error: function (e){
+              console.log(e);  
+            },
+            fail: function(e){
+                console.error("Could not get data from '" + url +"' " + e);
             }
-            else {
-                console.log("Error:" + xhr.status + " Received:" + xhr.statusText);
-            }
-        }
-        xhr.send(null);
+        });
     }
 };
 
