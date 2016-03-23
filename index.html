@@ -1,61 +1,65 @@
 ﻿<!DOCTYPE html>
-<meta charset="UTF-8">
-<meta name="description" content="App Tile Dashboard">
-<meta name="keywords" content="HTML5, CSS3">
-<meta name="author" content="Nicolai Sattler">
 <html>
+    <meta charset="UTF-8">
+    <meta name="description" content="App Tile Dashboard">
+    <meta name="keywords" content="HTML5, CSS3">
+    <meta name="author" content="Nicolai Sattler">
     <head>
         <title>Dashboard</title>
         <link rel="stylesheet" href="styles/stylesheet.css" type="text/css" />  
     </head>
     <body>
-        <header>
-            <h1>Exam 70480</h1>
-            <h2>HTML5 and JavaScript</h2>
-        </header>
+    <header>
+        <h1>Exam 70480</h1>
+        <h2>HTML5 and JavaScript</h2>
+    </header>
 
-        <nav>
+    <nav>
+        <div></div>
+        <div>
             <a href="pages/registrate.html">Registrate Here</a>
-        </nav>
+        </div>
+        <div></div>
+    </nav>
 
-        <main id="container">
-            <section>
-                <p id="selectedCellText">No Cell has been selected</p>
-                <p id="affectedCellText">...</p>
-                <article>
-                    <div  id="grid">
-                        <div id="weatherCell" class="cell inactiveCell">
-                            <select id="city"></select>
-                        </div>
-                        <div id="timeCell " class="cell inactiveCell">
-                            <p id="timestampDig">Time is undefined</p>
-                            <canvas id="canvasClock" width="200", height="200">
-                                <p>Your browser does not support Canvas</p>
-                            </canvas>
-                        </div>
-                        <div id="cell3" class="cell inactiveCell">cell 3</div>
-                        <div id="cell4" class="cell inactiveCell">cell 4</div>
-                        <div id="cell5" class="cell inactiveCell">cell 5</div>
-                        <div id="cell6" class="cell inactiveCell">cell 6</div>
-                        <div id="cell7" class="cell inactiveCell">cell 7</div>
-                        <div id="cell8" class="cell inactiveCell">cell 8</div>
-                        <div id="cell9" class="cell inactiveCell">cell 9</div>
+    <main id="container">
+        <section>
+            <p id="selectedCellText">No Cell has been selected</p>
+            <p id="affectedCellText">...</p>
+            <article>
+                <div id="grid">
+                    <div id="weatherCell" class="cell inactiveCell">
+                        <select id="city"></select>
                     </div>
-                </article>
-                <article>
+                    <div id="timeCell " class="cell inactiveCell">
+                        <p id="timestampDig">Time is undefined</p>
+                        <canvas id="canvasClock" width="200" height="200">
+                            <p>Your browser does not support Canvas</p>
+                        </canvas>
+                    </div>
+                    <div id="cell3" class="cell inactiveCell">cell 3</div>
+                    <div id="cell4" class="cell inactiveCell">cell 4</div>
+                    <div id="cell5" class="cell inactiveCell">cell 5</div>
+                    <div id="cell6" class="cell inactiveCell">cell 6</div>
+                    <div id="cell7" class="cell inactiveCell">cell 7</div>
+                    <div id="cell8" class="cell inactiveCell">cell 8</div>
+                    <div id="cell9" class="cell inactiveCell">cell 9</div>
+                </div>
+            </article>
+            <article></article>
+        </section>
+    </main>
 
-                </article>
-            </section>
-        </main>
+    <aside>
+        <!--Should contain content related to the surrounding content-->
+    </aside>
 
-        <aside>
-            <!--Should contain content related to the surrounding content-->
+    <footer>
+        <!-- information about author, copyright etc-->
+    </footer>
 
-        </aside>
-        <script src="http://code.jquery.com/jquery-latest.js"></script>
-        <script src="code/appinit.js" type="text/javascript"></script>
-    </body>
-        <footer>
-            <!-- information about author, copyright etc-->
-        </footer>
+    <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+    <script src="https://www.google.com/jsapi" type="text/javascript"></script>
+    <script src="code/appinit.js" type="text/javascript"></script>
+</body>
 </html>

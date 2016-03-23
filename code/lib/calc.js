@@ -8,7 +8,6 @@ var Calculator = {
     },  
     SurfaceArea : function(radius){
         if(IsANumber(radius) && radius > 0){
-            //Quadraat
             var area = Math.PI * Math.pow(radius, 2);
             return area;
         }

@@ -1,7 +1,23 @@
-* {
+*{
     margin: 0;
     padding: 0;
     border: 0;
+}
+
+/*Font Families */
+@font-face 
+{
+    font-family: 'BackToSchool';
+    src : url('../fonts/BackToSchool.ttf');
+}
+
+h1, h2
+{
+    font-family: 'BackToSchool';
+    text-align: center;
+    color: white;
+    position: relative;
+    top: 10px;
 }
 
 header
@@ -11,15 +27,32 @@ header
     height:120px;
     position: relative;
     background-color: rgb(50, 50, 50);
+    border-left: 2px solid rgb(38, 38, 38);
+    border-right: 2px solid rgb(38, 38, 38);
+    box-shadow: 3px 0px 5px rgba(0, 0, 0, 0.6), -3px 0px 5px rgba(0, 0, 0, 0.6);
 }
+
+
 
 nav 
 {
+    display: flex;
     margin:auto;
     width:auto;
     height: 80px;
     position: relative;
     background-color: rgb(75, 75, 75);
+}
+
+nav > div 
+{
+    flex: 1;
+}
+
+nav div:nth-child(2) 
+{
+    flex : 2;
+    background-color: green;
 }
 
 main
@@ -63,7 +96,6 @@ input:invalid
 {
     border-color: red;    
 }
-
 
 #grid {
     margin: auto;

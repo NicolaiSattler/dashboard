@@ -3,10 +3,9 @@
     importJavaScript('code/lib/calc.js');
     importJavaScript('code/lib/http.js');
 
-    //add custom code here:
     importJavaScript('code/ui/grid.js');
     importJavaScript('code/ui/clock.js');
-    importJavaScript('code/ui/googlenews.js');
+    //importJavaScript('code/ui/news.js');
 });
 
 var importJavaScript = function(fileURL){

@@ -3,15 +3,8 @@ var context = canvas.getContext("2d");
 var bgLoaded = false;
 var clockImage = new Image();
 clockImage.src = 'img/clock.jpg';
-// clockImage.onload = function(){
-//     bgLoaded = true;
-// }
 
 (function () {
-    // if(!bgLoaded){
-    //     setTimeout('clockApp', 100);
-    //     return;
-    // }
     createClock();
     setInterval('createClock()', 1000);
     window.setInterval(updateTime, 1000);

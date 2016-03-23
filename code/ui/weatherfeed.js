@@ -18,9 +18,6 @@ this._cities = new Array
     "Volkel",
     "Woensdrecht");
 
-///https://developer.yahoo.com/weather/#get-started
-
-
 window.onload = function()
 {
     populateSelect();
