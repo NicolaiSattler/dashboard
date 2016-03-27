@@ -24,15 +24,10 @@ header
 {
     margin:auto;  
     width: 978px;
-    height:120px;
+    height:80px;
     position: relative;
     background-color: rgb(50, 50, 50);
-    border-left: 2px solid rgb(38, 38, 38);
-    border-right: 2px solid rgb(38, 38, 38);
-    box-shadow: 3px 0px 5px rgba(0, 0, 0, 0.6), -3px 0px 5px rgba(0, 0, 0, 0.6);
 }
-
-
 
 nav 
 {
@@ -41,7 +36,6 @@ nav
     width:auto;
     height: 80px;
     position: relative;
-    background-color: rgb(75, 75, 75);
 }
 
 nav > div 
@@ -51,8 +45,9 @@ nav > div
 
 nav div:nth-child(2) 
 {
-    flex : 2;
-    background-color: green;
+    flex : none;
+    width: 978px;
+    background-color: rgb(75, 75, 75);
 }
 
 main
@@ -66,7 +61,7 @@ main
 section
 {
     margin:auto;
-    background-color: pink;
+    background-color: rgb(50, 50, 50);
 }
 
 footer
@@ -74,7 +69,7 @@ footer
     margin:auto;
     height: 80px;
     width:auto;
-    background-color: red;
+    background-color: rgb(75, 75, 75);
 }
 
 input
@@ -152,8 +147,23 @@ input:invalid
     border: solid red 1px;
 }
 
-#Country{
-    text-transform: uppercase;
+.boxshadow
+{
+    border-left: 1px solid rgb(38, 38, 38);
+    border-right: 1px solid rgb(38, 38, 38);
+    box-shadow: 2px 0px 2px rgba(75, 75, 75, 0.6), -2px 0px 2px rgba(75, 75, 75, 0.6);
+}
+
+ul 
+{
+    list-style-type: none;
+}
+
+
+#register 
+{
+    width: auto;
+    height: auto;    
 }
 
 /*#canvasClock
