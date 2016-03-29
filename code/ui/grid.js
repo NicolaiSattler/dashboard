@@ -22,7 +22,7 @@ function GetCellAttributes(e) {
     $(this).removeClass("inactiveCell").addClass("selectedCell");
     
     var scTag = document.getElementById("selectedCellText");
-    scTag.innerHTML = _selectedCellId;
+    //scTag.innerHTML = _selectedCellId;
     _event = true;
 }
 
@@ -36,7 +36,7 @@ function ValidateElement(e) {
         _affectedCellId = $(this).attr('id');
         $(this).removeClass("inactiveCell").addClass("validCell");
         var acTag = document.getElementById("affectedCellText");
-        acTag.innerHTML = _affectedCellId;
+        //acTag.innerHTML = _affectedCellId;
     }
 }
 
@@ -71,7 +71,7 @@ function FinalizeCellRepositioning(e) {
 
 function CreatePlaceHolder(){
     var tag = document.createElement('p');
-    tag.innerHTML = _selectedCellId;
+    //tag.innerHTML = _selectedCellId;
     
     var placeholder = document.createElement('div');
     placeholder.id = "placeholder";

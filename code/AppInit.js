@@ -2,10 +2,11 @@
     importJavaScript('code/lib/aSquirl.js');
     importJavaScript('code/lib/calc.js');
     importJavaScript('code/lib/http.js');
+    importJavaScript('code/lib/tasker.js');
 
     importJavaScript('code/ui/grid.js');
     importJavaScript('code/ui/clock.js');
-    //importJavaScript('code/ui/news.js');
+    importJavaScript('code/ui/task.js');
 });
 
 var importJavaScript = function(fileURL){

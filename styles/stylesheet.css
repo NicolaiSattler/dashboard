@@ -11,6 +11,12 @@
     src : url('../fonts/BackToSchool.ttf');
 }
 
+@font-face 
+{
+    font-family: 'alarmclock';
+    src : url('../fonts/alarmclock.ttf');
+}
+
 h1, h2
 {
     font-family: 'BackToSchool';
@@ -105,8 +111,11 @@ input:invalid
     height: 900px;
 }
 
-.placeholder
-{
+.hidden{
+    visibility: hidden;
+}
+
+.placeholder{
     border: 5px solid red;
     width: 200px;
     height: 200px;
@@ -114,60 +123,101 @@ input:invalid
     pointer-events:none;
 }
 
-.cell
-{
+.cell{
     width: 298px;
     height: 298px;
     -webkit-user-select: none;
 }
 
-.cell:hover
-{
+.cell:hover{
     width: 298px;
     height: 298px;
     background-color : lightgray;
     border: solid white 1px;
 }
 
-.inactiveCell
-{
+.inactiveCell{
     background-color:gray;
     border : solid black 1px;   
 }
 
-.selectedCell
-{
+.selectedCell{
     background-color: yellowgreen;
     border: solid green 1px;
 }
 
-.validCell
-{
+.validCell{
     background-color: orangered;
     border: solid red 1px;
 }
 
-.boxshadow
-{
+.boxshadow{
     border-left: 1px solid rgb(38, 38, 38);
     border-right: 1px solid rgb(38, 38, 38);
     box-shadow: 2px 0px 2px rgba(75, 75, 75, 0.6), -2px 0px 2px rgba(75, 75, 75, 0.6);
 }
 
-ul 
-{
+ul{
     list-style-type: none;
 }
 
-
-#register 
-{
+#register{
     width: auto;
     height: auto;    
 }
 
-/*#canvasClock
-{
-    width: 200px;
-    height: 200px;
-}*/
+/*Webworker + progressbar*/
+#startWorker{
+    position: relative;
+    width: 60px;
+    height: 30px;
+}
+
+#progressContainer{
+    position: fixed;
+    width: 100%;
+    height: 4px;
+    z-index: 1;
+    border-bottom: 1px solid rgb(38, 38, 38);
+}
+
+#progressBar{
+    width: 1%;
+    height: 4px;
+    background-color: red;
+}
+
+/* Clock */
+#timestampDig{
+    font-family: 'alarmclock';
+    text-align: center;
+    color: green;
+    position: relative;
+    top: 10px;
+    font-size: 20pt;
+}
+
+#tabDigital{
+    position: absolute;
+    width: 298px;
+    height: 298px;
+    z-index: 1;
+}
+
+
+
+/*Maak een animatie waarbij de verschillende panelen zullen sliden.*/
+
+
+
+
+#tabAnalogue {
+    position: absolute;
+    width: 298px;
+    height: 298px;
+    z-index: 0;
+}
+
+#tabSwitch{
+    z-index: 2
+}

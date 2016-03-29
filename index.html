@@ -9,57 +9,73 @@
         <link rel="stylesheet" href="styles/stylesheet.css" type="text/css" />  
     </head>
     <body>
-    <header class="boxshadow">
-        <h1>Exam 70480</h1>
-        <h2>HTML5 and JavaScript</h2>
-    </header>
-
-    <nav>
-        <div></div>
-        <div class="boxshadow">
-            <a href="pages/registrate.html">Registrate Here</a>
+        <div id="progressContainer" class="hidden">
+            <div id="progressBar">
+                progress: 0%
+            </div>            
         </div>
-        <div></div>
-    </nav>
+        <header class="boxshadow">
+            <h1>Exam 70480</h1>
+            <h2>HTML5 and JavaScript</h2>
+        </header>
+        <nav>
+            <div></div>
+            <div class="boxshadow">
+                <a href="pages/registrate.html">Registrate Here</a>
+                <a href="pages/webworker.html">Webworker Test</a>            
+            </div>
+            <div></div>
+        </nav>
 
-    <main id="container" class="boxshadow">
-        <section>
-            <p id="selectedCellText">No Cell has been selected</p>
-            <p id="affectedCellText">...</p>
-            <article>
-                <div id="grid">
-                    <div id="weatherCell" class="cell inactiveCell">
-                        <select id="city"></select>
+        <main id="container" class="boxshadow">           
+            <section>
+                <!--<p id="selectedCellText">No Cell has been selected</p>
+                <p id="affectedCellText">...</p>-->
+                <article>
+                    <div id="grid">
+                        <div id="weatherCell" class="cell inactiveCell">
+                            <select id="city"></select>
+                        </div>
+                        <div id="timeCell " class="cell inactiveCell">
+                            <div id="tabDigital" class="Active">
+                                <p id="timestampDig">Time is undefined</p>
+                            </div>
+                            <div id="tabAnalogue">
+                                <canvas id="canvasClock" width="200" height="200">
+                                    <p>Your browser does not support Canvas</p>
+                                </canvas>       
+                            </div>
+                            <div id="tabSwitch">
+                                <input type="radio" name="tab" value="0" checked>
+                                <input type="radio" name="tab" value="1">
+                            </div>
+                        </div>
+                        <div id="cell3" class="cell inactiveCell">
+                            <p>Start an intesive task...</p>
+                            <button id="startWorker">Start Worker</button>    
+                        </div>
+                        <div id="cell4" class="cell inactiveCell">cell 4</div>
+                        <div id="cell5" class="cell inactiveCell">cell 5</div>
+                        <div id="cell6" class="cell inactiveCell">cell 6</div>
+                        <div id="cell7" class="cell inactiveCell">cell 7</div>
+                        <div id="cell8" class="cell inactiveCell">cell 8</div>
+                        <div id="cell9" class="cell inactiveCell">cell 9</div>
                     </div>
-                    <div id="timeCell " class="cell inactiveCell">
-                        <p id="timestampDig">Time is undefined</p>
-                        <canvas id="canvasClock" width="200" height="200">
-                            <p>Your browser does not support Canvas</p>
-                        </canvas>
-                    </div>
-                    <div id="cell3" class="cell inactiveCell">cell 3</div>
-                    <div id="cell4" class="cell inactiveCell">cell 4</div>
-                    <div id="cell5" class="cell inactiveCell">cell 5</div>
-                    <div id="cell6" class="cell inactiveCell">cell 6</div>
-                    <div id="cell7" class="cell inactiveCell">cell 7</div>
-                    <div id="cell8" class="cell inactiveCell">cell 8</div>
-                    <div id="cell9" class="cell inactiveCell">cell 9</div>
-                </div>
-            </article>
-            <article></article>
-        </section>
-    </main>
+                </article>
+                <article></article>
+            </section>
+        </main>
 
-    <aside>
-        <!--Should contain content related to the surrounding content-->
-    </aside>
+        <aside>
+            <!--Should contain content related to the surrounding content-->
+        </aside>
 
-    <footer class="boxshadow">
-        <!-- information about author, copyright etc-->
-    </footer>
+        <footer class="boxshadow">
+            <!-- information about author, copyright etc-->
+        </footer>
 
-    <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
-    <script src="https://www.google.com/jsapi" type="text/javascript"></script>
-    <script src="code/appinit.js" type="text/javascript"></script>
-</body>
+        <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+        <script src="https://www.google.com/jsapi" type="text/javascript"></script>
+        <script src="code/appinit.js" type="text/javascript"></script>
+    </body>
 </html>
