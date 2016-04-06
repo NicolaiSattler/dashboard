@@ -12,11 +12,14 @@ function IsANumber(obj){
     return false;
 }
 
+function IsObject(val){
+    return val instanceof Object;
+}
+
 function HasClass(elem, className){
-    if (IsNotNull(elem)){
-        //start with a space, or the start(^) of a string + classname + space or end($) of string
-        //return elem.className.match(new RegExp('\s|^' + className + '\s|$')) != "";
-        return elem.className.indexOf(className) != -1;    
+    if (IsNotNull(elem) && elem.nodeType == 1){
+        var result = elem.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'));
+        return result != null;
     }
 }
 
@@ -24,8 +27,7 @@ function AddClass(elem, className){
     if(IsNotNull(elem)){
         if (elem.classList){
             elem.classList.add(className);
-        }
-        
+        }  
         //support for older browsers
         // if(elem.className && element.className.length > 0){
         //     elem.className = elem.className.concat(' ' + className);
@@ -41,4 +43,12 @@ function RemoveClass(elem, className){
             elem.classList.remove(className);
         }
     }
+}
+
+function ChildIndex(e){
+    var i = 0;
+    while((e = e.previousSibling) != null){
+        i++;       
+    }
+    return i;
 }

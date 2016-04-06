@@ -1,0 +1,14 @@
+CACHE MANIFEST
+#resources that should be cached
+#index.html
+#/pages/registrate.html
+#styles/stylesheet.css
+
+NETWORK
+#resources that should never be cached
+#an asterisk (*) can be used to indicate that all other files require an internet connection
+*
+
+FALLBACK
+#serves in place of all files whenever the internet connection cannot be established
+offline.html

@@ -48,8 +48,8 @@ function FinalizeCellRepositioning(e) {
         return;
     }
     
-    var affectedCellIndex = childIndex(affectedCell);
-    var selectedCellIndex = childIndex(selectedCell);
+    var affectedCellIndex = ChildIndex(affectedCell);
+    var selectedCellIndex = ChildIndex(selectedCell);
     
     selectedCell.style.position = "";
     selectedCell.style.left = "";
@@ -104,18 +104,6 @@ function SetPlaceholderPosition(e) {
     }
 }
 
-//add to library..
-function hasClass(element, className) {
-    return (' ' + element.className + ' ').indexOf(' ' + className + ' ') > -1;
-}
 
-//add to library..
-function childIndex(e){
-    var i = 0;
-    while((e = e.previousSibling) != null){
-        i++;       
-    }
-    return i;
-}
 
 

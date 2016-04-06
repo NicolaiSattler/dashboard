@@ -7,6 +7,7 @@
     importJavaScript('code/ui/grid.js');
     importJavaScript('code/ui/clock.js');
     importJavaScript('code/ui/task.js');
+    importJavaScript('code/ui/tab.js');    
 });
 
 var importJavaScript = function(fileURL){
