@@ -10,15 +10,11 @@ employee.payRise = function(amount){
     return this.salery;
 }
 
-
-
 //An alternative notation for defining an object is the literal notation:
 var objectName = {
     property1 : "value",
     property2 : "value"
 };
-
-
 
 //A constructor function
 var Account = function (id, name){
@@ -27,6 +23,7 @@ var Account = function (id, name){
     this.balance = 0;
     this.TransactionCount = 0;
 };
+
 //Methods should be set under prototype when creating an Object.
 Account.prototype = {
     deposit = function(amount){

@@ -50,12 +50,14 @@ function AnimateSVG(svg, frames, delay){
 }
 
 function AnimateFrame(){
-    for (var i = 0; i < this.elements.length; i++) {
-        var radius = 80;
-        var angle = (Math.PI / 5 * this.currentFrame) - (Math.PI / 5) * i;
-        
-        this.elements[i].setAttribute("cx", 30 + GetX(80, angle));
-        this.elements[i].setAttribute("cy", 30 + GetY(80, angle));        
+    if (this.elements && this.elements.length > 0){
+        for (var i = 0; i < this.elements.length; i++) {
+            var radius = 80;
+            var angle = (Math.PI / 5 * this.currentFrame) - (Math.PI / 5) * i;
+
+            this.elements[i].setAttribute("cx", 30 + GetX(80, angle));
+            this.elements[i].setAttribute("cy", 30 + GetY(80, angle));
+        }
     }
 }
 

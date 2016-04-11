@@ -1,4 +1,4 @@
-//In JS, a namespace is a global varaible with varaibles and function attacked to it.
+//In JS, a namespace is a global variable with variables and function attached to it.
 
 var MyNamespace = {
     myFunction1 : function(param){

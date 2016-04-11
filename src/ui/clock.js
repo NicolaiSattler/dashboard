@@ -2,7 +2,7 @@ var canvas = document.getElementById('canvasClock');
 var context = canvas.getContext("2d");
 var bgLoaded = false;
 var clockImage = new Image();
-clockImage.src = 'img/clock.png';
+clockImage.src = 'img/clock.jpg';
 
 (function () {
     createClock();
@@ -79,6 +79,3 @@ function updateTime(){
     var digClock = document.getElementById("timestampDig");
     digClock.innerHTML = hours + ":" + minutes + "." + seconds;
 }
-
-//mijn japanse naam is:
-//To-Ki-Mi-Mo-Ta-Ki

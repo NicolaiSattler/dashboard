@@ -69,7 +69,7 @@ function SetSessionStor(name, value){
 
 function GetSessionStor(name){
     var result = sessionStorage.getItem(name);
-    if(IsNotNull(result)){      
+    if (IsNotNull(result)) {      
         try {
             return JSON.parse(result);
         } catch (e) {
@@ -84,7 +84,7 @@ function RemoveSessionStor(name){
 
 
 function _hasStorageSupport(){
-    if(typeof(Storage) !== undefined) return true;
+    if (typeof (Storage) !== undefined) return true;
     return false;
 }
 

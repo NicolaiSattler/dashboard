@@ -8,14 +8,14 @@
 //Mathematical
 var Calculator = {
     Circumference = function(radius){
-        if(IsANumber(radius) && radius > 0){
+        if (IsANumber(radius) && radius > 0) {
             var circumference = 2 * Math.PI * radius;
             return circumference;
         }
         return null;
     },  
     SurfaceArea = function(radius){
-        if(IsANumber(radius) && radius > 0){
+        if (IsANumber(radius) && radius > 0) {
             //Quadraat
             var area = Math.PI * Math.pow(radius, 2);
             return area;
@@ -27,18 +27,16 @@ var Calculator = {
 //JSON
 var Converter = {
     ObjectToJSON = function(obj) {
-        if(IsNotNull(obj)){
+        if (IsNotNull(obj)) {
             var jsonObj = JSON.stringify(obj);
             return jsonObj;
         }
     },
     JSONToObject = function(json){
-        if(IsNotNull(obj)){
+        if (IsNotNull(obj)) {
             var parsedObj = JSON.parse(json);
             return parsedObj;
         }
         return null;
     }
 }
-
-

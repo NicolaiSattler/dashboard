@@ -9,12 +9,12 @@ var WorkerTask = function (file){
 
 WorkerTask.prototype = {
     start : function () {
-        if(IsNotNull(this.worker)){
+        if (IsNotNull(this.worker)) {
             this.worker.postMessage("start");
         }      
     },
     stop : function (){
-        if(IsNotNull(task)){
+        if (IsNotNull(task)) {
             worker.terminate();
             worker = null;
         }

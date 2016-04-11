@@ -1,13 +1,15 @@
 ﻿window.onload = (function () {  
-    importJavaScript('code/lib/aSquirl.js');
-    importJavaScript('code/lib/calc.js');
-    importJavaScript('code/lib/http.js');
-    importJavaScript('code/lib/tasker.js');
+    importJavaScript('src/lib/utils.js');
+    importJavaScript('src/lib/calc.js');
+    importJavaScript('src/lib/http.js');
+    importJavaScript('src/lib/tasker.js');
 
-    importJavaScript('code/ui/grid.js');
-    importJavaScript('code/ui/clock.js');
-    importJavaScript('code/ui/task.js');
-    importJavaScript('code/ui/tab.js');    
+    importJavaScript('src/ui/grid.js');
+    importJavaScript('src/ui/clock.js');
+    importJavaScript('src/ui/task.js');
+    importJavaScript('src/ui/tab.js');
+    importJavaScript('src/ui/loadAnimation.js');
+    importJavaScript('src/ui/audio.js');
 });
 
 var importJavaScript = function(fileURL){

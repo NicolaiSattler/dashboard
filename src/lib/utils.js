@@ -1,12 +1,12 @@
 function IsNotNull(obj){
-    if(obj != null && typeof obj !== undefined){
+    if (obj != null && typeof obj !== undefined) {
         return true;
     }
     return false;
 }
 
 function IsANumber(obj){
-    if(IsNotNull(obj) && !isNaN(obj)){
+    if (IsNotNull(obj) && !isNaN(obj)) {
         return true;
     }
     return false;
@@ -24,7 +24,7 @@ function HasClass(elem, className){
 }
 
 function AddClass(elem, className){
-    if(IsNotNull(elem)){
+    if (IsNotNull(elem)) {
         if (elem.classList){
             elem.classList.add(className);
         }  
@@ -38,7 +38,7 @@ function AddClass(elem, className){
 }
 
 function RemoveClass(elem, className){
-    if(IsNotNull(elem)){
+    if (IsNotNull(elem)) {
         if (elem.classList){
             elem.classList.remove(className);
         }
